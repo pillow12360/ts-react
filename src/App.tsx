@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Todo from './Todo/Todo';
-import TodoInput from './Todo/TodoInput';
+import Main from './Main';
 
 function App() {
   return (
-    <div>
-      <h1>투 두 어플리케이션</h1>
-      <Todo />
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="todo" element={<Todo />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
